@@ -41,3 +41,53 @@ A brief introduction into the web app feautures:
 - Children's profiles include multimedia content such as videos showcasing their personality, talents, and daily activities
 - Parents receive notifications when there are updates on children they've expressed interest in, such as new photos or progress reports
 - The platform offers a secure document management system where parents can upload and share adoption-related documents with the orphanage/nuns
+  
+
+
+Server Endpoints
+REST API
+
+For Orphanage Staff Member/Nuns:
+- Create staff member/nuns profile (POST/staff_member_profile {staff ID})
+- Create orphans profile (POST /create_orphan_profile {first name} {last name} list<{media url}>)
+- Update orphans profile (PUT /update_orphan_profile {dict of update info})
+- Schedule meeting with adopter (POST /accept_adopter {adopter ID})
+- Manage documents for orphans (POST/orphan_document)
+
+For Adopter:
+- Create Profile (POST/create_profile)
+- Update Profile (PUT/update_profile)
+- Express interest in orphan(POST/update_pofile)
+  
+
+Data Model
+
+Orphan:
+ID
+First name
+Last name
+Description
+Gender
+Birth date
+Health Status
+List of images/videos
+Adoption Status
+
+Potential adopter:
+ID
+First name
+Last name
+Phone number
+Email
+Address
+Adoption Preferences
+
+Orphanage Staff member/Nun:
+ID
+First name
+Last name
+Email
+Phone number
+Role
+List of potential parents with whom they will be serving
+List of orphan up for adoption
